@@ -9,19 +9,17 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Vishal Chandnani"]
   spec.email         = ["vschandnani@gmail.com"]
   spec.extensions    = ["ext/gem1/extconf.rb"]
-  spec.summary       = "My first Ruby gem!"
-  spec.description   = "This Ruby gem is awesome!"
-  spec.homepage      = "http://www.myfirstrubygem.com"
+  spec.summary       = %q{TODO: Write a short summary. Required.}
+  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.homepage      = ""
   spec.license       = "MIT"
 
-  spec.bindir        = 'bin'
-  spec.executable    = 'exec.rb'
   spec.files         = `git ls-files -z`.split("\x0")
-  spec.platform      = Gem::Platform::RUBY
-  spec.require_paths = [ 'lib', 'ext' ]
-  spec.extensions    = Dir['ext/**/extconf.rb']
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake", '~> 0'
-  spec.add_development_dependency "rake-compiler", '~> 0'
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake-compiler"
 end
